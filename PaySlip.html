@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Pay Slip Generator</title>
+</head>
+<body>
+
+    <h2 style="text-align: center;">Employee Pay Slip Generator</h2>
+    
+    <form method="post" action="PaySlip.php" style="border: 1px solid #000; padding: 20px; width: 300px; margin: 0 auto;">
+        <div style="margin-bottom: 10px;">
+            <label for="name">Employee Name:</label>
+            <input type="text" name="name" id="name" required style="width: 100%; padding: 5px;">
+        </div>
+        <div style="margin-bottom: 10px;">
+            <label for="basic">Basic Salary:</label>
+            <input type="number" name="basic" id="basic" step="0.01" required style="width: 100%; padding: 5px;">
+        </div>
+        <div style="margin-bottom: 10px;">
+            <label for="designation">Designation:</label>
+            <select name="designation" id="designation" required style="width: 100%; padding: 5px;">
+                <option value="Manager">Manager</option>
+                <option value="Supervisor">Supervisor</option>
+                <option value="Clerk">Clerk</option>
+                <option value="Peon">Peon</option>
+            </select>
+        </div>
+        <div>
+            <input type="submit" value="Generate Pay Slip" style="width: 100%; padding: 10px;">
+        </div>
+    </form>
+
+</body>
+</html>

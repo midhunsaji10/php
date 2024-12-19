@@ -1,41 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>armstrong</title>
-    <?php 
-    if($_SERVER["REQUEST_METHOD"]=="POST")
-    {
-        $number=$_POST['number'];
-        $a=$number;
-        $sum= 0;
-
-        $digits=strlen((string)$number);
-
-        while($a!=0){
-            $rem=$a%10;
-            $sum=$sum+ pow($rem,$digits);
-            $a=$a/10;
-
-        }
-            if($number == $sum){
-                echo "$number an armstrong number";
-                break;
-            }else{
-                echo "$number is not an armstrong number";
-                break;
-            }
-        
-
-    }
-    ?>
-</head>
+<CENTER>
 <body>
-    <form method="post" action="arm.php">
-        Enter the number:
-        <input type="number" name="number">
-        <input type="submit" name="Submit">
+  <h1>ARMSTRONG NUMBER</h1>
+<form method="post">
+Enter the number:
+<input type="number" name="number">
+<input type="submit" name="Submit">
 </form>
-</body>
+</body></CENTER>
 </html>
+<?php
+ if($_POST)
+ {
+   $number=$_POST['number'];
+   $a=$number;
+   $sum=0;
+   while($a!=0)
+   {
+     $rem=$a%10;
+     $sum=$sum+($rem*$rem*$rem);
+     $a=$a/10;
+   }
+   if($number==$sum)
+   {
+     echo "<center>Yes $number an Armstrong Number</center>";
+   }
+   else
+   {
+     echo "<center>$number is not an Armstrong Number</center>";
+   }
+  }
+?>
